@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from sys import stderr
+from src.codegen import *
+
+if __name__ == "__main__":
+    try:
+        auto_cmakelists()
+        project_languages = auto_cmake_options()
+        auto_cmake_optimizations()
+        auto_cmake_warnings()
+        auto_cmake_external()
+        auto_cmake_sources(project_languages)
+        auto_cmake_linker()
+        auto_cmake_target()
+
+        print("\n\033[92mSUCCESS: CMake project generated successfully!\033[0m")
+
+    except Exception as e:
+        print(f"\n\033[91mERROR: \033[0m{e}", file=stderr)
+        exit(84)
