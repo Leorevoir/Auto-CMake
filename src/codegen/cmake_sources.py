@@ -49,11 +49,6 @@ if(EXISTS ${{INCLUDE_DIR}})
     )
 endif()
 
-message(STATUS "INFO: Found sources for compilation: ${{{project_name}_SOURCES}}")
-if({project_name}_HEADERS)
-    message(STATUS "INFO: Found headers for IDE: ${{{project_name}_HEADERS}}")
-endif()
-
 #######################################
 """
 
